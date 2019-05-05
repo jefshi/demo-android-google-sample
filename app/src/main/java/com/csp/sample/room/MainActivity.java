@@ -1,4 +1,4 @@
-package com.csp.sample.demo;
+package com.csp.sample.room;
 
 import android.app.Activity;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.csp.sample.demo;
+package com.csp.sample.room;
 
 /**
  * Example local unit test, which will execute on the development machine (host).

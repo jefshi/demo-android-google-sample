@@ -1,4 +1,4 @@
-package com.csp.sample.demo;
+package com.csp.sample.room;
 
 /**
  * Instrumented test, which will execute on an Android device.
