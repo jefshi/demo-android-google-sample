@@ -1,5 +1,7 @@
 package com.csp.sample.room.database;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -19,6 +21,11 @@ public interface WordDao {
     @Query("DELETE FROM word_table")
     void deleteAll();
 
+    // the ViewModel only exposes immutable LiveData objects to the observers
     @Query("SELECT * from word_table ORDER BY word ASC")
-    List<Word> getAllWords();
+    LiveData<List<Word>> getAllWords();
+
+//    // the developer want to update the stored data, you must use MutableLiveData instead of LiveData
+//    @Query("SELECT * from word_table ORDER BY word ASC")
+//    MutableLiveData<List<Word>> getAllWords();
 }
