@@ -12,8 +12,8 @@ import java.util.List;
 @Dao
 public interface WordDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertOrReplace(Word word);
+//    @Insert(onConflict = OnConflictStrategy.REPLACE)
+//    void insertOrReplace(Word word);
 
     @Insert
     void insert(Word word);
