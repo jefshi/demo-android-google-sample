@@ -1,8 +1,8 @@
 package com.csp.sample.room.mvvm;
 
 import android.app.Application;
-import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LiveData;
+import android.arch.lifecycle.AndroidViewModel;
+import android.arch.lifecycle.LiveData;
 import com.csp.sample.room.database.Word;
 
 import java.util.List;
