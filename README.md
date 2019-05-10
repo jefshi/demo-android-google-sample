@@ -5,6 +5,7 @@
 ### Demo 与分支说明
 
 - 【分支名称】：room-with-a-view-java
+- 【分支名称】：room-with-a-view-java-support
 - 【分支说明】：Android Room with a View - Java
 - 【分支备注】：Room 框架的使用
 - 【URL】：https://codelabs.developers.google.com/codelabs/android-room-with-a-view
