@@ -1,9 +1,12 @@
-package com.csp.sample.room.database;
+package com.csp.sample.room.mvvm;
 
 
 import android.app.Application;
 import android.os.AsyncTask;
 import androidx.lifecycle.LiveData;
+import com.csp.sample.room.database.Word;
+import com.csp.sample.room.database.WordDao;
+import com.csp.sample.room.database.WordRoomDatabase;
 
 import java.util.List;
 
