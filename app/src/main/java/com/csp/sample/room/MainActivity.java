@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY));
+            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY), null);
             mWordViewModel.insert(word);
         } else {
             Toast.makeText(
@@ -58,9 +58,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.button_save) {
-            Intent intent = new Intent(MainActivity.this, NewWordActivity.class);
-            startActivityForResult(intent, NEW_WORD_ACTIVITY_REQUEST_CODE);
+        switch (v.getId()) {
+            case R.id.button_save:
+                Intent intent = new Intent(MainActivity.this, NewWordActivity.class);
+                startActivityForResult(intent, NEW_WORD_ACTIVITY_REQUEST_CODE);
+                break;
+            case R.id.button_delete:
+                mWordViewModel.getRepository().delete(new Word("Hello", null));
+                break;
+            case R.id.button_deleteAll:
+                mWordViewModel.getRepository().deleteAll();
+                break;
+            case R.id.button_getAll:
+                mWordViewModel.getRepository().getAll();
+                break;
+            case R.id.button_getWords:
+                mWordViewModel.getRepository().getWords("%o%");
+                break;
         }
     }
 }
