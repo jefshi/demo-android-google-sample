@@ -17,4 +17,7 @@ public interface UserDao {
 
     @Query("SELECT * from user_table")
     List<User> getAll();
+
+    @Query("SELECT word from user_table LEFT JOIN word_table ON user_table.name = word_table.name")
+    List<String> getWord();
 }

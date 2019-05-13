@@ -10,6 +10,7 @@ import androidx.room.RoomDatabase;
 import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Database(entities = {Word.class, User.class}, version = 2, exportSchema = false)
@@ -82,8 +83,15 @@ public abstract class WordRoomDatabase extends RoomDatabase {
             word = new Word("BBB", "04");
             mDao.insert(word);
 
+            mUserDao.insert(new User("01"));
+            mUserDao.insert(new User("02"));
+
             List<User> all = mUserDao.getAll();
             Log.e("TAG", all.isEmpty() + "");
+
+            List<String> words = mUserDao.getWord();
+            Log.e("TAG", Arrays.toString(words.toArray()));
+
             return null;
         }
     }
